@@ -1,3 +1,6 @@
+namespace SpriteKind {
+    export const Basket = SpriteKind.create()
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     basketball.throwDart()
 })
@@ -129,6 +132,9 @@ function court (bool: boolean) {
     	
     }
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
 let defense: Sprite = null
 let basketball: Dart = null
 let coach = 0
@@ -294,7 +300,7 @@ let net = sprites.create(img`
     ..........1..........
     .........1.1.........
     .....................
-    `, SpriteKind.Player)
+    `, SpriteKind.Basket)
 net.setPosition(150, 50)
 game.onUpdateInterval(3000, function () {
     defense = sprites.createProjectileFromSide(img`
