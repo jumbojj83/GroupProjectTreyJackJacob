@@ -1,3 +1,6 @@
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    basketball.throwDart()
+})
 function court (bool: boolean) {
     if (!(coach >= 18)) {
     	
@@ -6,10 +9,11 @@ function court (bool: boolean) {
     }
 }
 let defense: Sprite = null
+let basketball: Dart = null
 let coach = 0
 game.splash("Welcome Coach!")
 coach = game.askForNumber("How old are you?", 2)
-let basketball = darts.create(img`
+basketball = darts.create(img`
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
     4 4 4 4 f 4 4 4 4 4 f 4 4 4 4 4 
     4 4 . f f f . f . . f . f . 4 4 
