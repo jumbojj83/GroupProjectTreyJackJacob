@@ -28,6 +28,7 @@ let basketball = darts.create(img`
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
     `, SpriteKind.Player)
 basketball.setTrace()
+basketball.controlWithArrowKeys()
 game.onUpdateInterval(5000, function () {
     defense = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . 
