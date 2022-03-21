@@ -157,22 +157,22 @@ basketball = darts.create(img`
 basketball.setTrace()
 basketball.controlWithArrowKeys()
 let net = sprites.create(img`
-    . . . 2 2 2 2 2 2 2 2 2 2 2 . . 
-    . . . 2 2 2 2 2 2 2 2 2 2 2 . . 
-    2 2 2 2 . . . . . . . . . 2 2 2 
-    2 2 2 . . . . . . . . . . . . 2 
-    2 2 . . . . . . . . . . . . . 2 
-    2 2 1 . . . . . . . . . 8 . . 2 
-    2 . 1 . 8 8 . . 1 . . 1 8 8 . 2 
-    2 1 1 . 8 . . . 1 . . 1 . 8 . 2 
-    2 1 . . 8 . . . 1 . . 1 . 8 2 2 
-    1 2 2 8 8 . . . 1 . . 1 . 2 2 2 
-    1 2 2 2 2 2 2 2 2 2 2 2 2 2 8 2 
-    1 . . 8 . . . . 1 . . 1 . . 8 8 
-    1 . 8 8 . . . . 1 . . . 1 . . 8 
-    1 . 8 . . . . 1 1 . . . 1 . . 8 
-    1 . 8 . . . . 1 . . . . 1 . . 8 
-    1 . 8 . . . . 1 . . . . . 1 . 8 
+    fffffffffffffffffffff
+    fdddddddddddddddddddf
+    fdddddddddddddddddddf
+    fddddddfffffffddddddf
+    fddddddfdddddfddddddf
+    fddddddfdddddfddddddf
+    fddddddfdddddfddddddf
+    fdddddd2222222ddddddf
+    fdddddd1d1d1d1ddddddf
+    fddddddd1d1d1dddddddf
+    ffffffff1f1f1ffffffff
+    ........1.1.1........
+    .........1.1.........
+    ..........1..........
+    .........1.1.........
+    .....................
     `, SpriteKind.Player)
 net.setPosition(150, 50)
 game.onUpdateInterval(10000, function () {
