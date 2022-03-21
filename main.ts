@@ -29,6 +29,25 @@ let basketball = darts.create(img`
     `, SpriteKind.Player)
 basketball.setTrace()
 basketball.controlWithArrowKeys()
+let net = sprites.create(img`
+    . . . 2 2 2 2 2 2 2 2 2 2 2 . . 
+    . . . 2 2 2 2 2 2 2 2 2 2 2 . . 
+    2 2 2 2 . . . . . . . . . 2 2 2 
+    2 2 2 . . . . . . . . . . . . 2 
+    2 2 . . . . . . . . . . . . . 2 
+    2 2 1 . . . . . . . . . 8 . . 2 
+    2 . 1 . 8 8 . . 1 . . 1 8 8 . 2 
+    2 1 1 . 8 . . . 1 . . 1 . 8 . 2 
+    2 1 . . 8 . . . 1 . . 1 . 8 2 2 
+    1 2 2 8 8 . . . 1 . . 1 . 2 2 2 
+    1 2 2 2 2 2 2 2 2 2 2 2 2 2 8 2 
+    1 . . 8 . . . . 1 . . 1 . . 8 8 
+    1 . 8 8 . . . . 1 . . . 1 . . 8 
+    1 . 8 . . . . 1 1 . . . 1 . . 8 
+    1 . 8 . . . . 1 . . . . 1 . . 8 
+    1 . 8 . . . . 1 . . . . . 1 . 8 
+    `, SpriteKind.Player)
+net.setPosition(150, 50)
 game.onUpdateInterval(5000, function () {
     defense = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . 
