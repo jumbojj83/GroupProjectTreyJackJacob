@@ -325,8 +325,8 @@ let net = sprites.create(img`
     .........1.1.........
     .....................
     `, SpriteKind.Basket)
-net.setPosition(80, 5)
-game.onUpdateInterval(3000, function () {
+net.setPosition(150, 50)
+forever(function () {
     defense = sprites.createProjectileFromSide(img`
         ...................
         ......fffffff......
@@ -364,4 +364,5 @@ game.onUpdateInterval(3000, function () {
         ..fffffff.fffffff..
         `, 20, randint(-10, 10))
     defense.y = randint(10, 80)
+    pause(5000)
 })
