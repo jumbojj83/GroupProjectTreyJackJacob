@@ -261,6 +261,7 @@ let basketball: Dart = null
 let coach = 0
 game.splash("Welcome Coach!")
 coach = game.askForNumber("How old are you?", 2)
+court(true)
 basketball = darts.create(img`
     . . . . . f f f f f f f . . . . . 
     . . . f f 5 5 5 5 e 5 5 f f . . . 
@@ -337,6 +338,6 @@ game.onUpdateInterval(3000, function () {
         ..f11111f.f11111f..
         ..f11111f.f11111f..
         ..fffffff.fffffff..
-        `, 20, randint(-20, 20))
-    defense.y = randint(10, 150)
+        `, 20, randint(-10, 10))
+    defense.y = randint(10, 100)
 })
