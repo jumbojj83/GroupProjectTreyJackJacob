@@ -254,6 +254,13 @@ function court (bool: boolean) {
     }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Basket, function (sprite, otherSprite) {
+    basketball.sprite.destroy()
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.over(false)
+})
+sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     basketball = darts.create(img`
         . . . . . f f f f f f f . . . . . 
         . . . f f 5 5 5 5 e 5 5 f f . . . 
@@ -275,10 +282,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Basket, function (sprite, otherS
         `, SpriteKind.Player, 10, 110)
     basketball.setTrace()
     basketball.controlWithArrowKeys()
-    info.changeScoreBy(1)
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.over(false)
 })
 let defense: Sprite = null
 let basketball: Dart = null
