@@ -1,12 +1,10 @@
 namespace SpriteKind {
     export const Basket = SpriteKind.create()
 }
-// When the A button is pressed then the basketball moves in the direction that the user is aiming.
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     basketball.throwDart()
 })
 function court (bool: boolean) {
-    // Age decides which court the user plays on.
     if (!(coach >= 18)) {
         scene.setBackgroundImage(img`
             fffffff11111ffffffffffffffffff1ffffffffffffffffffffffffffffffffff111ffffffffffffffffffffffffffffffffffffffffffffffffffffffff1ffffffffffffffffffffff11111ffffffff
@@ -259,11 +257,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Basket, function (sprite, otherS
     basketball.sprite.destroy()
     info.changeScoreBy(1)
 })
-// If player basketball overlaps with projectile defense then the game is over and the user loses the game.
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.over(false)
 })
-// After Sprite is destroyed on overlap with the basket, it respawns at it's original start point.
 sprites.onDestroyed(SpriteKind.Player, function (sprite) {
     basketball = darts.create(img`
         . . . . . f f f f f f f . . . . . 
@@ -291,9 +287,7 @@ let defense: Sprite = null
 let basketball: Dart = null
 let coach = 0
 game.splash("Welcome Coach!")
-// Asks for user input of age.
 coach = game.askForNumber("How old are you?", 2)
-// Calls to the court function.
 court(true)
 basketball = darts.create(img`
     . . . . . f f f f f f f . . . . . 
@@ -316,7 +310,6 @@ basketball = darts.create(img`
     `, SpriteKind.Player, 10, 110)
 basketball.setTrace()
 basketball.controlWithArrowKeys()
-// The net sprite is what the user wants to hit with the basketball.
 let net = sprites.create(img`
     fffffffffffffffffffff
     fdddddddddddddddddddf
@@ -336,7 +329,6 @@ let net = sprites.create(img`
     .....................
     `, SpriteKind.Basket)
 net.setPosition(150, 50)
-// This forever loop makes sure that defense projectiles are consistently flying across the screen.
 forever(function () {
     defense = sprites.createProjectileFromSide(img`
         ...................
